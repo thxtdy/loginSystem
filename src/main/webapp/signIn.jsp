@@ -8,12 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>회원가입</title>
     <link rel="stylesheet" href="signstyles.css">
-  <%--   <%!
-    	String username = null;
-    	String email = null;
-    	String userid = null;
-    	String userpw = null;
-    %> --%>
+
 </head>
 <body>
     <div class="signup-container">
@@ -37,7 +32,7 @@
 			
 			<button type="submit" id="complete" >가입하기</button>
         </form>
-        <form action="check.jsp">
+        <form action="check.java">
         	<button id="#check" style="align-items: flex-end">중복 확인</button>
         </form>
         

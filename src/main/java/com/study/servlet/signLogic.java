@@ -1,4 +1,4 @@
-package logic;
+package com.study.servlet;
 
 import jakarta.servlet.ServletConfig;
 import jakarta.servlet.ServletException;
@@ -39,24 +39,6 @@ public class signLogic extends HttpServlet {
 
 	}
 
-	protected void service(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-	   	String method = request.getMethod();
-    	System.out.println(method);
-    	
-    	if(method.equals("GET")) {
-    		doGet(request, response);
-    	} else if (method.equals("POST")) {
-    		doPost(request, response);
-    	}
-
-	}
-
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-
-	}
-
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		response.setContentType("text/html; charset=UTF-8");
@@ -67,10 +49,8 @@ public class signLogic extends HttpServlet {
 		String userpw = request.getParameter("userpw");
 
 		try { 
-			
 			String query = " INSERT INTO sign(username, email, userid, userpw) VALUES (?, ?, ?, ?) ";
 			PreparedStatement ptmt = conn.prepareStatement(query);
-			conn.setAutoCommit(false);
 			
 			ptmt.setString(1, username);
 			ptmt.setString(2, email);
